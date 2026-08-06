@@ -160,9 +160,12 @@ def classify_email(email):
 
 query = "common phishing email indicators"
 
-results = tavily_tool.invoke({
-    "query": query
-})
+if tavily_tool:
+  results = tavily_tool.invoke({
+      "query": query
+  })
+else:
+  pass
 
 def search_cybersecurity_knowledge(query):
     """Search the internal cybersecurity knowledge base."""
