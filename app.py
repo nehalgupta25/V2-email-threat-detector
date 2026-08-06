@@ -60,6 +60,35 @@ try:
   else:
     st.sidebar.info("Try Valid API-keys")
 
+  st.sidebar.markdown("""
+  <div class="about-box">
+  
+  <div class="about-title">
+      🔐 About This Project
+  </div>
+  
+  <div class="about-text">
+  
+  An AI-powered cybersecurity assistant designed
+  to detect and analyze potentially malicious or
+  phishing emails.
+  
+  <br><br>
+  
+  <b>Core Technologies:</b><br>
+  • Naive Bayes Classification<br>
+  • Gemini LLM<br>
+  • RAG + FAISS<br>
+  • Hugging Face Embeddings<br>
+  • Tavily Web Search<br>
+  • LangChain Agent<br>
+  • Streamlit
+  
+  </div>
+  
+  </div>
+  """, unsafe_allow_html=True)
+
 except Exception as err:
   pass
   
