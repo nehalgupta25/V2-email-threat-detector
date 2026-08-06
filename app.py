@@ -144,9 +144,7 @@ labels = [
     "Safe"
 ]
 vectorizer = CountVectorizer()
-
 email_vectors = vectorizer.fit_transform(emails)
-
 classifier = MultinomialNB()
 
 classifier.fit(email_vectors,labels)
@@ -160,7 +158,7 @@ def classify_email(email):
 
 query = "common phishing email indicators"
 
-if tavily_tool:
+if TAVILY_API_KEY:
   results = tavily_tool.invoke({
       "query": query
   })
