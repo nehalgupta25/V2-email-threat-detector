@@ -22,39 +22,43 @@ st.title("🛡️ Email Threat / Phishing Detector")
 st.write("AI-powered email security analysis using Machine Learning, RAG, Web Search and Gemini.")
 st.sidebar.title("MUST GIVE API KEYS")
 
-GOOGLE_API_KEY = st.sidebar.text_input("GOOGLE_API_KEY",type="password")
-TAVILY_API_KEY = st.sidebar.text_input("TAVILY_API_KEY",type="password")
-
-ALL_API = [GOOGLE_API_KEY,TAVILY_API_KEY]
-
-if not all(ALL_API):
-  st.sidebar.error("MUST PASS ALL API-KETS")
-  url = "https://aistudio.google.com/api-keys"
-  st.markdown(f"Get Google API Key-{url}")
+try:
+  GOOGLE_API_KEY = st.sidebar.text_input("GOOGLE_API_KEY",type="password")
+  TAVILY_API_KEY = st.sidebar.text_input("TAVILY_API_KEY",type="password")
   
-  url = "https://app.tavily.com/playground"
-  st.markdown(f"Get Tavily API Key-{url}")
+  ALL_API = [GOOGLE_API_KEY,TAVILY_API_KEY]
   
-elif all(ALL_API):
-  st.sidebar.success("API KEYS LOADED")
-  
-  options = [
-    "gemini-3.5-flash-lite",
-    "gemini-3.5-flash",
-    "gemini-2.5-flash-lite"
-]
-
-  selected_model = st.sidebar.selectbox("Select Model", options=options)
+  if not all(ALL_API):
+    st.sidebar.error("MUST PASS ALL API-KETS")
+    url = "https://aistudio.google.com/api-keys"
+    st.markdown(f"Get Google API Key-{url}")
     
-  model = ChatGoogleGenerativeAI(
-        model=selected_model,
-        google_api_key=GOOGLE_API_KEY
-    )
+    url = "https://app.tavily.com/playground"
+    st.markdown(f"Get Tavily API Key-{url}")
+    
+  elif all(ALL_API):
+    st.sidebar.success("API KEYS LOADED")
+    
+    options = [
+      "gemini-3.5-flash-lite",
+      "gemini-3.5-flash",
+      "gemini-2.5-flash-lite"
+  ]
+  
+    selected_model = st.sidebar.selectbox("Select Model", options=options)
+      
+    model = ChatGoogleGenerativeAI(
+          model=selected_model,
+          google_api_key=GOOGLE_API_KEY
+      )
+  
+  else:
+    st.sidebar.info("Try Valid API-keys")
 
-else:
-  st.sidebar.info("Try Valid API-keys")
-
-
+except Exception as err:
+  st.write(err)
+  
+  
 #=======================BACKEND=========================================
 
 #Cybersecurity minitextbook containing explanation
