@@ -61,7 +61,7 @@ try:
     st.sidebar.info("Try Valid API-keys")
 
 except Exception as err:
-  st.sidebar.error("Something went wrong. Please check your API keys.")
+  pass
   
   
 #=======================BACKEND=========================================
@@ -227,8 +227,7 @@ try:
     }
 except Exception as err:
 
-  st.error("⚠️ Backend could not be initialized.")
-  st.error("Please check that all API keys are entered correctly.")
+  pass
 #===========================FRONTEND========================================
 
 #==================Step 4 STREAMLIT NAVBARS=====================
