@@ -14,7 +14,28 @@ from langchain.agents import create_agent
 import streamlit as st
 
 st.set_page_config(layout = "wide")
+def get_base64(image_file):
+    with open(image_file, "rb") as f:
+        return base64.b64encode(f.read()).decode()
 
+bg_image = get_base64("finalBg.png")
+
+st.markdown(
+    f"""
+    <style>
+
+    .stApp {{
+         
+        background-image: url("data:image/png;base64,{bg_image}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+    }}
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 #================Step 2 LOAD ENV and API-KEYS================
 st.title("🛡️ Email Threat / Phishing Detector")
