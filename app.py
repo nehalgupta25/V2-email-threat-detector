@@ -56,7 +56,7 @@ try:
     st.sidebar.info("Try Valid API-keys")
 
 except Exception as err:
-  st.write(err)
+  st.ignore(err)
   
   
 #=======================BACKEND=========================================
