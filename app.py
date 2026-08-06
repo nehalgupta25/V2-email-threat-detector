@@ -51,6 +51,11 @@ try:
           model=selected_model,
           google_api_key=GOOGLE_API_KEY
       )
+    
+    tavily_tool = TavilySearchResults(
+          max_results=3,
+          tavily_api_key=TAVILY_API_KEY
+      )
   
   else:
     st.sidebar.info("Try Valid API-keys")
@@ -152,10 +157,6 @@ def classify_email(email):
   prediction = classifier.predict(email_vector)
   return prediction[0]
 
-tavily_tool = TavilySearchResults(
-    max_results=3,
-    tavily_api_key=TAVILY_API_KEY
-)
 
 query = "common phishing email indicators"
 
