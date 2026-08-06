@@ -73,7 +73,7 @@ try:
   to detect and analyze potentially malicious or
   phishing emails.
   
-  <br><br>
+  <br>
   
   <b>Core Technologies:</b><br>
   • Naive Bayes Classification<br>
