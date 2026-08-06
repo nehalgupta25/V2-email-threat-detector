@@ -17,16 +17,10 @@ st.set_page_config(layout = "wide")
 
 
 #================Step 2 LOAD ENV and API-KEYS================
-st.markdown("""
-<div class="main-title">
-    🛡️ Email Threat & Phishing Detector
-</div>
+st.title("🛡️ Email Threat / Phishing Detector")
 
-<div class="subtitle">
-    AI-powered cybersecurity analysis using Machine Learning,
-    RAG, Web Search & Agentic AI
-</div>
-""", unsafe_allow_html=True)
+st.write("AI-powered email security analysis using Machine Learning, RAG, Web Search and Gemini.")
+st.sidebar.title("MUST GIVE API KEYS")
 
 GOOGLE_API_KEY = st.sidebar.text_input("GOOGLE_API_KEY",type="password")
 TAVILY_API_KEY = st.sidebar.text_input("TAVILY_API_KEY",type="password")
