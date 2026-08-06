@@ -60,7 +60,10 @@ try:
   else:
     st.sidebar.info("Try Valid API-keys")
 
-  st.sidebar.markdown("""
+except Exception as err:
+  pass
+
+st.sidebar.markdown("""
   <div class="about-box">
   
   <div class="about-title">
@@ -88,9 +91,6 @@ try:
   
   </div>
   """, unsafe_allow_html=True)
-
-except Exception as err:
-  pass
   
   
 #=======================BACKEND=========================================
