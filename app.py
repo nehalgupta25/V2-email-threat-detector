@@ -1,5 +1,6 @@
 #==========================STEP !: LOAD MODULES=================================
 import os
+import base64
 from getpass import getpass
 from langchain_google_genai import ChatGoogleGenerativeAI  
 from langchain_core.prompts import ChatPromptTemplate
