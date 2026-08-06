@@ -7,3 +7,5 @@ faiss-cpu
 sentence-transformers
 scikit-learn
 tavily-python
+torch
+torchvision
