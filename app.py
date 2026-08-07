@@ -206,16 +206,7 @@ try:
   
     prediction = classifier.predict(email_vector)
     return prediction[0]
-  
-  
-  
-  
-  if TAVILY_API_KEY:
-    results = tavily_tool.invoke({
-        "query": query
-    })
-  else:
-    pass
+
 
   def format_docs(docs):
       return "\n\n".join(doc.page_content for doc in docs)
