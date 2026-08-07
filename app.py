@@ -280,8 +280,7 @@ try:
         "sources": retrieved_docs
     }
 except Exception as err:
-
-  pass
+    st.error(f"backend :{error}")
 #===========================FRONTEND========================================
 
 #==================Step 4 STREAMLIT NAVBARS=====================
