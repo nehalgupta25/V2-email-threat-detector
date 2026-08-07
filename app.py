@@ -217,12 +217,7 @@ try:
   else:
     pass
   
-  def search_cybersecurity_knowledge(query):
-      """Search the internal cybersecurity knowledge base."""
-  
-      docs = retriever.invoke(query)
-  
-      return format_docs(docs)
+ 
   
   agent = create_agent(
       model=model,
