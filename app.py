@@ -208,7 +208,7 @@ try:
     return prediction[0]
   
   
-  query = "common phishing email indicators"
+  
   
   if TAVILY_API_KEY:
     results = tavily_tool.invoke({
@@ -216,8 +216,16 @@ try:
     })
   else:
     pass
+
+  def format_docs(docs):
+      return "\n\n".join(doc.page_content for doc in docs)
   
- 
+  def search_cybersecurity_knowledge(query):
+      """Search the internal cybersecurity knowledge base."""
+  
+      docs = retriever.invoke(query)
+  
+      return format_docs(docs)
   
   agent = create_agent(
       model=model,
